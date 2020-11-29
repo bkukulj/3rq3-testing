@@ -1,6 +1,5 @@
 from dinnerisserved.creditcards import CreditCards
 
-
 def test_credit_card_verifies_expiry_date():
     valid_dates = [
         "11/24",
