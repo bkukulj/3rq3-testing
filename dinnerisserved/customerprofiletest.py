@@ -1,15 +1,9 @@
 class CustomerProfile:
     def __init__(self):
-        self.valid = True
+        self.valid = False
 
     def verify_info(self,info):
-        return True
+        return False
 
     def invalidate_login(self):
-        return True
-      #  self.create=True
-      #  self.name = True
-      #  self.email = True
-      #  self.phone = True
-    #def verify_expdate(sf, date):
-    #    return None
+        return False

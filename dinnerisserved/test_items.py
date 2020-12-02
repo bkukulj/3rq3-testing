@@ -2,6 +2,8 @@ from dinnerisserved.visatest import VisaTest
 from dinnerisserved.itemavailabilitytest import ItemAvailable
 from dinnerisserved.customerprofiletest import CustomerProfile
 from dinnerisserved.itemsorderstest import OrdersItems
+from dinnerisserved.menuitems import MenuItem
+from dinnerisserved.deliveryfee import DeliveryFee
 #test 1
 def test_credit_transation_status():
     visatest = VisaTest()
@@ -79,31 +81,18 @@ def test_valid_tip():
     checktip = tip.verify_tip()
     assert checktip == True, "The tip info entered ok"
 
+#test 14
+def test_add_remove_item():
+        item_action = [
+            "add",
+            "remove",
+        ]
+        check_status = MenuItem()
+        for name in item_action:
+            assert check_status.verify_status(name) == True, "Add and remove items work ok"
+#test 15
+def test_delivery_fee():
+        fee = DeliveryFee()
+        checkfee = fee.added
+        assert checkfee == True, "The delivery fee is added to the order"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Select tip amount 5%	Select tip amount 5% (order total $50)	5% added to order total $52.5	order total $52.5
-#Select tip amount 10%	Select tip amount 10% (order total $50)	10% added to order total $55	order total $55
-#Finalize order without tip	Finalize order without tip (order total $50)	order total remains the same - $50	order total $50
-#Select tip amount 5$	Select tip amount $5 (order total $50)	$5 added to order total - $55	order total $55
-#Select tip amount 10$	Select tip amount $10 (order total $50)	$10 added to order total - $60	order total $60
-#Select take-out option	Select take-out option (order total $50)	take out option selected, no delivery fee added	order total $50
-#Select delivery option	select delivery option (order total $50)	delivery option selected, delivery fee added	order total $55
-#Add delivery fee	add $5 to order total (order total $50)	$5 added to order total - $55	order total $55
-#Delete orders	try deleting a placed order	order deleted successfully	order deleted
-#Add items to the menu	test adding items to the menu	items added from the menu	item added to the menu
-#Delete items from the menu	test deleting items to the menu	items deleted from the menu	item deleted from the menu

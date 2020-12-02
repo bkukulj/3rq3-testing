@@ -1,7 +1,7 @@
 class ItemAvailable:
     def __init__(self):
-        self.breakfast = True
-        self.lunch = True
-        self.dinner = True
-        self.brunch = True
-        self.allday = True
+        self.breakfast = False
+        self.lunch = False
+        self.dinner = False
+        self.brunch = False
+        self.allday = False
